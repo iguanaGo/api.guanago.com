@@ -25,7 +25,7 @@ class VueloController {
 			def flights = slurper.parseText('{ "flights":' + result + '}')
 			def trips = flights.flights.trips.tripOption.sort{a,b ->  Float.parseFloat(a.saleTotal.substring(3,a.saleTotal.length())) <=>  Float.parseFloat(b.saleTotal.substring(3,b.saleTotal.length())) }
 
-			FileUtils.save(result,"result.json")
+			//FileUtils.save(result,"result.json")
 
 			def aircrafts
 			flights.flights.trips.data.aircraft.each{
