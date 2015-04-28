@@ -1,0 +1,408 @@
+{
+    "content": {
+        "kind": "qpxExpress#tripsSearch",
+        "trips": {
+            "kind": "qpxexpress#tripOptions",
+            "requestId": "htrGKb45Bikr2sEDg0M1bg",
+            "data": {
+                "kind": "qpxexpress#data",
+                "airport": [
+                    {
+                        "kind": "qpxexpress#airportData",
+                        "code": "EZE",
+                        "city": "BUE",
+                        "name": "Buenos Aires Ministro Pistarini"
+                    },
+                    {
+                        "kind": "qpxexpress#airportData",
+                        "code": "SCL",
+                        "city": "SCL",
+                        "name": "Santiago Arturo Merino Benitez"
+                    }
+                ],
+                "city": [
+                    {
+                        "kind": "qpxexpress#cityData",
+                        "code": "BUE",
+                        "name": "Buenos Aires"
+                    },
+                    {
+                        "kind": "qpxexpress#cityData",
+                        "code": "SCL",
+                        "name": "Santiago"
+                    }
+                ],
+                "aircraft": [
+                    {
+                        "kind": "qpxexpress#aircraftData",
+                        "code": "77W",
+                        "name": "Boeing 777"
+                    }
+                ],
+                "tax": [
+                    {
+                        "kind": "qpxexpress#taxData",
+                        "id": "TQ_002",
+                        "name": "Argentina Security Tax International"
+                    },
+                    {
+                        "kind": "qpxexpress#taxData",
+                        "id": "YR_I",
+                        "name": "KL YR surcharge"
+                    },
+                    {
+                        "kind": "qpxexpress#taxData",
+                        "id": "QO_001",
+                        "name": "Argentina Immigration Tax"
+                    },
+                    {
+                        "kind": "qpxexpress#taxData",
+                        "id": "AR_001",
+                        "name": "Argentina Ticket Tax"
+                    },
+                    {
+                        "kind": "qpxexpress#taxData",
+                        "id": "ZK_001",
+                        "name": "Argentina Retention Income Tax"
+                    },
+                    {
+                        "kind": "qpxexpress#taxData",
+                        "id": "XR_002",
+                        "name": "Argentina XR"
+                    }
+                ],
+                "carrier": [
+                    {
+                        "kind": "qpxexpress#carrierData",
+                        "code": "KL",
+                        "name": "KLM Royal Dutch Airlines"
+                    }
+                ]
+            },
+            "tripOption": [
+                {
+                    "kind": "qpxexpress#tripOption",
+                    "saleTotal": "ARS2086.30",
+                    "id": "cReFa4flo4LMKBBTU6R297001",
+                    "slice": [
+                        {
+                            "kind": "qpxexpress#sliceInfo",
+                            "duration": 130,
+                            "segment": [
+                                {
+                                    "kind": "qpxexpress#segmentInfo",
+                                    "duration": 130,
+                                    "flight": {
+                                        "carrier": "KL",
+                                        "number": "701"
+                                    },
+                                    "id": "GtpTaRZgxce6Gb1J",
+                                    "cabin": "COACH",
+                                    "bookingCode": "T",
+                                    "bookingCodeCount": 9,
+                                    "marriedSegmentGroup": "0",
+                                    "leg": [
+                                        {
+                                            "kind": "qpxexpress#legInfo",
+                                            "id": "LMRg70znwzLl0aEi",
+                                            "aircraft": "77W",
+                                            "arrivalTime": "2015-05-13T10:10-03:00",
+                                            "departureTime": "2015-05-13T08:00-03:00",
+                                            "origin": "EZE",
+                                            "destination": "SCL",
+                                            "duration": 130,
+                                            "mileage": 706,
+                                            "meal": "Meal"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "pricing": [
+                        {
+                            "kind": "qpxexpress#pricingInfo",
+                            "fare": [
+                                {
+                                    "kind": "qpxexpress#fareInfo",
+                                    "id": "Ac9HpGN0ytA9l4YVuHMmmTPw/bJFnFxC8bnA1HW6WR+u9",
+                                    "carrier": "KL",
+                                    "origin": "BUE",
+                                    "destination": "SCL",
+                                    "basisCode": "TSFWAR"
+                                }
+                            ],
+                            "segmentPricing": [
+                                {
+                                    "kind": "qpxexpress#segmentPricing",
+                                    "fareId": "Ac9HpGN0ytA9l4YVuHMmmTPw/bJFnFxC8bnA1HW6WR+u9",
+                                    "segmentId": "GtpTaRZgxce6Gb1J",
+                                    "freeBaggageOption": [
+                                        {
+                                            "kind": "qpxexpress#freeBaggageAllowance",
+                                            "bagDescriptor": [
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "UPTO50LB 23KG AND62LI 158LCM",
+                                                    "count": 1,
+                                                    "description": [
+                                                        "Up to 50 lb/23 kg",
+                                                        "Up to 62 li/158 lcm"
+                                                    ],
+                                                    "subcode": "0GO"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "SPORT EQUIP SMALL DIMENSIONS",
+                                                    "count": 1,
+                                                    "description": [
+                                                        "Up to 50 lb/23 kg",
+                                                        "Up to 80 li/203 lcm"
+                                                    ],
+                                                    "subcode": "0GC"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0DC"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0GE"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0D6"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0ED"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0FO"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0F1"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0DD"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0G2"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0F2"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0FT"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0EA"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "MEDIA EQUIPMENT UPTO50 LB 23KG",
+                                                    "count": 1,
+                                                    "description": [
+                                                        "Media Equipment",
+                                                        "Up to 50 lb/23 kg"
+                                                    ],
+                                                    "subcode": "0IP"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 1,
+                                                    "subcode": "0IN"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "BICYCLE",
+                                                    "count": 0,
+                                                    "description": [
+                                                        "Bicycle"
+                                                    ],
+                                                    "subcode": "0EC"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "ANTLERS UP TO 120 INCHES",
+                                                    "count": 0,
+                                                    "description": [
+                                                        "Antlers",
+                                                        "Up to 120 inches"
+                                                    ],
+                                                    "subcode": "0EM"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "UPTO70LB 32KG AND62LI 158LCM",
+                                                    "count": 0,
+                                                    "description": [
+                                                        "Up to 70 lb/32 kg",
+                                                        "Up to 62 li/158 lcm"
+                                                    ],
+                                                    "subcode": "0FM"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 0,
+                                                    "subcode": "0GP"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "UPTO100LB 45KG AND 62LI 158LCM",
+                                                    "count": 0,
+                                                    "description": [
+                                                        "Up to 100 lb/45 kg",
+                                                        "Up to 62 li/158 lcm"
+                                                    ],
+                                                    "subcode": "0EW"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "UPTO100LB 45KG AND 62LI 158LCM",
+                                                    "count": 0,
+                                                    "description": [
+                                                        "Up to 100 lb/45 kg",
+                                                        "Up to 62 li/158 lcm"
+                                                    ],
+                                                    "subcode": "0EW"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "PET IN HOLD",
+                                                    "count": 0,
+                                                    "subcode": "0BS"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "commercialName": "PET IN CABIN",
+                                                    "count": 0,
+                                                    "subcode": "0BT"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 0,
+                                                    "subcode": "0EI"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 0,
+                                                    "subcode": "0H1"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 0,
+                                                    "subcode": "0F4"
+                                                },
+                                                {
+                                                    "kind": "qpxexpress#bagDescriptor",
+                                                    "count": 0,
+                                                    "subcode": "0G5"
+                                                }
+                                            ],
+                                            "pieces": 1
+                                        }
+                                    ]
+                                }
+                            ],
+                            "baseFareTotal": "USD97.00",
+                            "saleFareTotal": "ARS862.00",
+                            "saleTaxTotal": "ARS1224.30",
+                            "saleTotal": "ARS2086.30",
+                            "passengers": {
+                                "kind": "qpxexpress#passengerCounts",
+                                "adultCount": 1
+                            },
+                            "tax": [
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "AR_001",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "AR",
+                                    "country": "AR",
+                                    "salePrice": "ARS43.09"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "ZK_001",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "ZK",
+                                    "country": "AR",
+                                    "salePrice": "ARS301.72"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "XR_002",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "XR",
+                                    "country": "AR",
+                                    "salePrice": "ARS390.50"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "QO_001",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "QO",
+                                    "country": "AR",
+                                    "salePrice": "ARS88.90"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "TQ_002",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "TQ",
+                                    "country": "AR",
+                                    "salePrice": "ARS88.90"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "YR_I",
+                                    "chargeType": "CARRIER_SURCHARGE",
+                                    "code": "YR",
+                                    "salePrice": "ARS222.30"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "AR_001",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "AR",
+                                    "country": "AR",
+                                    "salePrice": "ARS11.11"
+                                },
+                                {
+                                    "kind": "qpxexpress#taxInfo",
+                                    "id": "ZK_001",
+                                    "chargeType": "GOVERNMENT",
+                                    "code": "ZK",
+                                    "country": "AR",
+                                    "salePrice": "ARS77.78"
+                                }
+                            ],
+                            "fareCalculation": "BUE KL SCL 97.00TSFWAR NUC 97.00 END ROE 1.00 FARE USD 97.00 EQU ARS 862.00 XT 54.20AR 88.90QO 88.90TQ 390.50XR 379.50ZK 222.30YR",
+                            "latestTicketingTime": "2015-05-13T06:59-04:00",
+                            "ptc": "ADT"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

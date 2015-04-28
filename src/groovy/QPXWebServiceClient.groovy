@@ -1,13 +1,17 @@
-@Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.7' )
+package iguana.src.groovy
+
+
 import groovyx.net.http.HTTPBuilder
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
 import groovy.util.slurpersupport.GPathResult
 import org.apache.http.client.HttpResponseException
 import static groovyx.net.http.ContentType.*
 import static groovyx.net.http.Method.*
 
-//package api.guanago.com.services.clients
+
+
 
 /**
  * Realiza peticiones al GDS de Google Flights (QPX).
@@ -94,7 +98,7 @@ import static groovyx.net.http.Method.*
       "tax": [
         {
           "kind": "qpxexpress#taxData",
-          "id": string,
+          "id": string,ices/clients/QPXWebServiceClient.groovy: 
           "name": string
         }
       ],
@@ -183,7 +187,7 @@ import static groovyx.net.http.Method.*
                         "commercialName": string,
                         "count": integer,
                         "description": [
-                          string
+                          stringices/clients/QPXWebServiceClient.groovy: 
                         ],
                         "subcode": string
                       }
@@ -238,32 +242,66 @@ import static groovyx.net.http.Method.*
  */
 public class QPXWebServiceClient {
 
-    public def request(String from, String destination) {
-     HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA")
-         def result = builder.request(POST, JSON) { req ->
-		  body = ["request": ["passengers": ["adultCount": 1],"slice": [["origin": from,"destination": destination,"date": "2015-05-13"],["origin": from,"destination": destination,"date": "2015-05-23"]]]]
-                 response.success = {resp, json ->
-                         println "JSON POST Success: ${resp.statusLine}"
-                         return json
-                 }
+	public def request(String from, String destination) 
+	{
+		HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA")
+		def result = builder.request(POST, JSON) 
+		{ req ->
+			body = ["request": 
+						["passengers": ["adultCount": 1]
+							,"slice": 
+							[
+									["origin": from,"destination": destination,"date": "2015-05-13"]
+									//, ["origin": destination,"destination": from,"date": "2015-05-23"]
+							]
+						,"solutions": 1
+						]
+					]
+			response.success = {resp, json ->
+				println "JSON POST Success: ${resp.statusLine}"
+				return json
+			}
 
-                 response.failure = {resp, html ->
-                         println "JSON POST Failed: ${resp.statusLine}"
-                 }				 
-         }
-		 
-		 return result
-    }
-	
-	
+			response.failure = {resp, html ->
+				println "JSON POST Failed: ${resp.statusLine}"
+			}
+		}
+		return result
+	}
+
+
 	static void main(String[] args) {
 		QPXWebServiceClient qpx = new QPXWebServiceClient()
+		def slurper = new JsonSlurper()
 		
-		println qpx.request("BUE", "BOG") 			
+		def result = new JsonBuilder( qpx.request(args[0], args[1]))
+		def flights = slurper.parseText('{ "flights":' + result + '}')
+		def trips = flights.flights.trips.tripOption.sort{a,b ->  Float.parseFloat(a.saleTotal.substring(3,a.saleTotal.length())) <=>  Float.parseFloat(b.saleTotal.substring(3,b.saleTotal.length())) }
+		
+		//FileUtils.save(result,"result.json")
+
+		println "============================================AIRCRAFTS============================================"
+		flights.flights.trips.data.aircraft.each{ 
+				println it.name
+		}
+		println "============================================END OF AIRCRAFTS============================================"
+					
+
+		println ("\n")
+		println "============================================SALE TOTAL============================================"
+		trips.each{
+			//origin|destination|saleTotal|DAY|departureTime|arrivalTime|duration|flight.carrier|flight.number | aircraft
+			println it.slice[0].segment[0].leg[0].origin + "|" +   it.slice[0].segment[0].leg[0].destination + "|" +  
+					it.slice[0].segment[0].leg[0].departureTime + "|" +   it.slice[0].segment[0].leg[0].arrivalTime + "|" +  it.slice[0].segment[0].duration/60 + " Hs |"+
+					it.saleTotal + "|" + it.slice[0].segment[0].flight.carrier + "|" + it.slice[0].segment[0].flight.number + "|" + it.slice[0].segment[0].leg[0].aircraft + "|"+  
+					it.slice[0].segment[0].leg[0].changePlane.toString()
+					//it.slice[0].segment[0].bookingCode + "|" it.slice[0].segment[0].bookingCodeCount
+		}
+		println "============================================END SALE TOTAL============================================"
+		println ("\n")
+		//println result.toString()
 	}
 }
-
-
 
 
 
