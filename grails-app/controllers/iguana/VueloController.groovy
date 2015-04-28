@@ -18,20 +18,20 @@ class VueloController {
 	{
 		try {
 			QPXWebServiceClient qpx = new QPXWebServiceClient()
-			
+
 			def slurper = new JsonSlurper()
-			
+
 			def result = new JsonBuilder( qpx.request("BUE", "BOG"))
 			def flights = slurper.parseText('{ "flights":' + result + '}')
 			def trips = flights.flights.trips.tripOption.sort{a,b ->  Float.parseFloat(a.saleTotal.substring(3,a.saleTotal.length())) <=>  Float.parseFloat(b.saleTotal.substring(3,b.saleTotal.length())) }
-			
+
 			FileUtils.save(result,"result.json")
-	
+
 			def aircrafts
 			flights.flights.trips.data.aircraft.each{
-					aircrafts += it.name
+				aircrafts += it.name
 			}
-	
+
 			def vuelos = "origin|destination|DAY|departureTime|arrivalTime|duration|saleTotal|flight.carrier|flight.number | aircraft <br />"
 			trips.each{
 				//origin|destination|saleTotal|DAY|departureTime|arrivalTime|duration|flight.carrier|flight.number | aircraft
@@ -39,12 +39,13 @@ class VueloController {
 						it.slice[0].segment[0].leg[0].departureTime + "|" +   it.slice[0].segment[0].leg[0].arrivalTime + "|" +  it.slice[0].segment[0].duration/60 + " Hs |"+
 						it.saleTotal + "|" + it.slice[0].segment[0].flight.carrier + "|" + it.slice[0].segment[0].flight.number + "|" + it.slice[0].segment[0].leg[0].aircraft + "|"+
 						it.slice[0].segment[0].leg[0].changePlane.toString() + "\n"
-						//it.slice[0].segment[0].bookingCode + "|" it.slice[0].segment[0].bookingCodeCount
+				//it.slice[0].segment[0].bookingCode + "|" it.slice[0].segment[0].bookingCodeCount
 			}
 			//println result.toString()
-			
+
 			render "vuelos <br /> ${vuelos}"
 		} catch (Exception e) {
+			render "#ERROR: " + e.printStackTrace()
 			e.printStackTrace()
 		}
 	}
