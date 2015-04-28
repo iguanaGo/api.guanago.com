@@ -45,7 +45,7 @@ class VueloController {
 
 			render "vuelos <br /> ${vuelos}"
 		} catch (Exception e) {
-			render "#ERROR: " + e.message()
+			render "#ERROR: " + e.getMessage()
 			e.printStackTrace()
 		}
 	}
