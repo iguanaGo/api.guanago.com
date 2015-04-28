@@ -20,7 +20,7 @@ class VueloController {
 		
 		def slurper = new JsonSlurper()
 		
-		def result = new JsonBuilder( qpx.request("BUE", "SCL"))
+		def result = new JsonBuilder( qpx.request("BUE", "BOG"))
 		def flights = slurper.parseText('{ "flights":' + result + '}')
 		def trips = flights.flights.trips.tripOption.sort{a,b ->  Float.parseFloat(a.saleTotal.substring(3,a.saleTotal.length())) <=>  Float.parseFloat(b.saleTotal.substring(3,b.saleTotal.length())) }
 		
