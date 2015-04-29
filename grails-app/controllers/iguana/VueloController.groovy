@@ -112,7 +112,7 @@ class VueloController {
 			def result = new JsonBuilder( qpx.request(origen, destino))
 			def flights = slurper.parseText('{ "flights":' + result + '}')
 			
-			FileUtils.save(result,"result.json")
+			//FileUtils.save(result,"result.json")
 			
 			if(flights.flights != null)
 			{

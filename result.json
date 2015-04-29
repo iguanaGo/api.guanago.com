@@ -3,7 +3,7 @@
         "kind": "qpxExpress#tripsSearch",
         "trips": {
             "kind": "qpxexpress#tripOptions",
-            "requestId": "htrGKb45Bikr2sEDg0M1bg",
+            "requestId": "74yf1d9sNyk1I3faR0M20O",
             "data": {
                 "kind": "qpxexpress#data",
                 "airport": [
@@ -82,8 +82,8 @@
             "tripOption": [
                 {
                     "kind": "qpxexpress#tripOption",
-                    "saleTotal": "ARS2086.30",
-                    "id": "cReFa4flo4LMKBBTU6R297001",
+                    "saleTotal": "ARS2088.40",
+                    "id": "ITr0f6SdWeCQu9Scd98XNT001",
                     "slice": [
                         {
                             "kind": "qpxexpress#sliceInfo",
@@ -324,9 +324,9 @@
                                 }
                             ],
                             "baseFareTotal": "USD97.00",
-                            "saleFareTotal": "ARS862.00",
-                            "saleTaxTotal": "ARS1224.30",
-                            "saleTotal": "ARS2086.30",
+                            "saleFareTotal": "ARS863.00",
+                            "saleTaxTotal": "ARS1225.40",
+                            "saleTotal": "ARS2088.40",
                             "passengers": {
                                 "kind": "qpxexpress#passengerCounts",
                                 "adultCount": 1
@@ -338,7 +338,7 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "AR",
                                     "country": "AR",
-                                    "salePrice": "ARS43.09"
+                                    "salePrice": "ARS43.17"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
@@ -346,7 +346,7 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "ZK",
                                     "country": "AR",
-                                    "salePrice": "ARS301.72"
+                                    "salePrice": "ARS302.05"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
@@ -354,7 +354,7 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "XR",
                                     "country": "AR",
-                                    "salePrice": "ARS390.50"
+                                    "salePrice": "ARS390.80"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
@@ -362,7 +362,7 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "QO",
                                     "country": "AR",
-                                    "salePrice": "ARS88.90"
+                                    "salePrice": "ARS89.00"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
@@ -370,14 +370,14 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "TQ",
                                     "country": "AR",
-                                    "salePrice": "ARS88.90"
+                                    "salePrice": "ARS89.00"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
                                     "id": "YR_I",
                                     "chargeType": "CARRIER_SURCHARGE",
                                     "code": "YR",
-                                    "salePrice": "ARS222.30"
+                                    "salePrice": "ARS222.40"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
@@ -385,7 +385,7 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "AR",
                                     "country": "AR",
-                                    "salePrice": "ARS11.11"
+                                    "salePrice": "ARS11.13"
                                 },
                                 {
                                     "kind": "qpxexpress#taxInfo",
@@ -393,10 +393,10 @@
                                     "chargeType": "GOVERNMENT",
                                     "code": "ZK",
                                     "country": "AR",
-                                    "salePrice": "ARS77.78"
+                                    "salePrice": "ARS77.85"
                                 }
                             ],
-                            "fareCalculation": "BUE KL SCL 97.00TSFWAR NUC 97.00 END ROE 1.00 FARE USD 97.00 EQU ARS 862.00 XT 54.20AR 88.90QO 88.90TQ 390.50XR 379.50ZK 222.30YR",
+                            "fareCalculation": "BUE KL SCL 97.00TSFWAR NUC 97.00 END ROE 1.00 FARE USD 97.00 EQU ARS 863.00 XT 54.30AR 89.00QO 89.00TQ 390.80XR 379.90ZK 222.40YR",
                             "latestTicketingTime": "2015-05-13T06:59-04:00",
                             "ptc": "ADT"
                         }
