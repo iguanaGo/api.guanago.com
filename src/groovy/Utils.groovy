@@ -1,4 +1,4 @@
-package iguana.src.groovy.Utils
+package iguana.src.groovy
 
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput

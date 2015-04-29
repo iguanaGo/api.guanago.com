@@ -240,11 +240,12 @@ import static groovyx.net.http.Method.*
 *
 *
  */
-public class QPXWebServiceClient {
+public class QPXWebServieClient {
 
 	public def request(String from, String destination) 
 	{
-		HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA")
+		//paulofer85 key: AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA
+		HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCiUGOjUJWSZiBNn5KRmp3hEVswYjk9Djg")
 		def result = builder.request(POST, JSON) 
 		{ req ->
 			body = ["request": 
