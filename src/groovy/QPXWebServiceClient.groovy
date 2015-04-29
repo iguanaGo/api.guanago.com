@@ -251,7 +251,7 @@ public class QPXWebServiceClient {
 						["passengers": ["adultCount": 1]
 							,"slice": 
 							[
-									["origin": "BUE","destination": "SCL","date": "2015-05-13"]
+									["origin": from,"destination": destination,"date": "2015-05-13"]
 									//, ["origin": destination,"destination": from,"date": "2015-05-23"]
 							]
 						,"solutions": 1
