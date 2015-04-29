@@ -23,6 +23,60 @@
 			</g:if>
 			<ol class="property-list escala">
 			
+				<g:if test="${escalaInstance?.avion}">
+				<li class="fieldcontain">
+					<span id="avion-label" class="property-label"><g:message code="escala.avion.label" default="Avion" /></span>
+					
+						<span class="property-value" aria-labelledby="avion-label"><g:fieldValue bean="${escalaInstance}" field="avion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${escalaInstance?.destino}">
+				<li class="fieldcontain">
+					<span id="destino-label" class="property-label"><g:message code="escala.destino.label" default="Destino" /></span>
+					
+						<span class="property-value" aria-labelledby="destino-label"><g:fieldValue bean="${escalaInstance}" field="destino"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${escalaInstance?.duracion}">
+				<li class="fieldcontain">
+					<span id="duracion-label" class="property-label"><g:message code="escala.duracion.label" default="Duracion" /></span>
+					
+						<span class="property-value" aria-labelledby="duracion-label"><g:fieldValue bean="${escalaInstance}" field="duracion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${escalaInstance?.fechaLlegada}">
+				<li class="fieldcontain">
+					<span id="fechaLlegada-label" class="property-label"><g:message code="escala.fechaLlegada.label" default="Fecha Llegada" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaLlegada-label"><g:fieldValue bean="${escalaInstance}" field="fechaLlegada"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${escalaInstance?.fechaSalida}">
+				<li class="fieldcontain">
+					<span id="fechaSalida-label" class="property-label"><g:message code="escala.fechaSalida.label" default="Fecha Salida" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaSalida-label"><g:fieldValue bean="${escalaInstance}" field="fechaSalida"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${escalaInstance?.origen}">
+				<li class="fieldcontain">
+					<span id="origen-label" class="property-label"><g:message code="escala.origen.label" default="Origen" /></span>
+					
+						<span class="property-value" aria-labelledby="origen-label"><g:fieldValue bean="${escalaInstance}" field="origen"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:escalaInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

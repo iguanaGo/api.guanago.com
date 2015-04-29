@@ -24,11 +24,35 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="avion" title="${message(code: 'escala.avion.label', default: 'Avion')}" />
+					
+						<g:sortableColumn property="destino" title="${message(code: 'escala.destino.label', default: 'Destino')}" />
+					
+						<g:sortableColumn property="duracion" title="${message(code: 'escala.duracion.label', default: 'Duracion')}" />
+					
+						<g:sortableColumn property="fechaLlegada" title="${message(code: 'escala.fechaLlegada.label', default: 'Fecha Llegada')}" />
+					
+						<g:sortableColumn property="fechaSalida" title="${message(code: 'escala.fechaSalida.label', default: 'Fecha Salida')}" />
+					
+						<g:sortableColumn property="origen" title="${message(code: 'escala.origen.label', default: 'Origen')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${escalaInstanceList}" status="i" var="escalaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${escalaInstance.id}">${fieldValue(bean: escalaInstance, field: "avion")}</g:link></td>
+					
+						<td>${fieldValue(bean: escalaInstance, field: "destino")}</td>
+					
+						<td>${fieldValue(bean: escalaInstance, field: "duracion")}</td>
+					
+						<td>${fieldValue(bean: escalaInstance, field: "fechaLlegada")}</td>
+					
+						<td>${fieldValue(bean: escalaInstance, field: "fechaSalida")}</td>
+					
+						<td>${fieldValue(bean: escalaInstance, field: "origen")}</td>
 					
 					</tr>
 				</g:each>
