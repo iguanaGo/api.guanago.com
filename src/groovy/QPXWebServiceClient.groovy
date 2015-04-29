@@ -1,3 +1,4 @@
+//@Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.7' )
 package iguana.src.groovy
 
 
@@ -240,7 +241,7 @@ import static groovyx.net.http.Method.*
 *
 *
  */
-public class QPXWebServieClient {
+public class QPXWebServiceClient {
 
 	public def request(String from, String destination) 
 	{
