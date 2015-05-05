@@ -250,6 +250,9 @@ public class QPXWebServiceClient {
 		
 		//paulofer85 key: AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA
 		//paulo.miguel.fernandez: AIzaSyCiUGOjUJWSZiBNn5KRmp3hEVswYjk9Djg
+		keyApi = keyApi?.trim() ? keyApi : "AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA"
+		numeroResultados = numeroResultados? numeroResultados : 20
+		
 		HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + keyApi)
 		def result = builder.request(POST, JSON) 
 		{ req ->
