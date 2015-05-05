@@ -159,7 +159,7 @@ class VueloController {
 
 		} catch (Exception e) {
 			def rdo = ""
-			grailsApplication.config.each { rdo  += it.toString()}
+			grailsApplication.config.each { rdo  += it.toString() + "<br />"}
 			render "#ERROR: " + e.getMessage() + "<br /> " + rdo 
 			e.printStackTrace()
 		}
