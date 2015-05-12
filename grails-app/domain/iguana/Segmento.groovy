@@ -8,6 +8,6 @@ class Segmento {
 	
 	static hasMany = [escalas: Escala]
 	
-    static constraints = {
-    }
+  static constraints = {
+  }
 }
