@@ -138,7 +138,8 @@ class VueloController {
 
 			def slurper = new JsonSlurper()
 
-			def result = new JsonBuilder( qpx.request(origen, destino, fecha, grailsApplication.config["QPX_KEY"] , grailsApplication.config["QPX_NUMBER_OF_RESULTS"].toInteger() ) )
+			//def result = new JsonBuilder( qpx.request(origen, destino, fecha, grailsApplication.config["QPX_KEY"] , grailsApplication.config["QPX_NUMBER_OF_RESULTS"].toInteger() ) )
+			def result = new JsonBuilder( qpx.request(origen, destino, fecha, "" , "" ) )
 			def flights = slurper.parseText('{ "flights":' + result + '}')
 
 			FileUtils.save(result,"result.json")
