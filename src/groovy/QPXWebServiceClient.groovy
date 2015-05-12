@@ -253,7 +253,7 @@ public class QPXWebServiceClient {
 		keyApi = keyApi?.trim() ? keyApi : "AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA"
 		numeroResultados = numeroResultados? numeroResultados : 20
 		
-		HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + keyApi)
+		HTTPBuilder builder = new HTTPBuilder("https://www.googleapis.com/qpxExpress/v1/trips/search?key=" +  "AIzaSyCdcaBHbsLjm8Vtp4lCg9UYJXsVraO-hwA")
 		def result = builder.request(POST, JSON) 
 		{ req ->
 			body = ["request": 
@@ -263,7 +263,7 @@ public class QPXWebServiceClient {
 									["origin": from,"destination": destination,"date": fecha]
 									//, ["origin": destination,"destination": from,"date": "2015-05-23"]
 							]
-						,"solutions": numeroResultados
+						,"solutions": 20
 						]
 					]
 			response.success = {resp, json ->
