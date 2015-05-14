@@ -5,7 +5,9 @@ class Vuelo {
 	Lugar destino
 	String precioTotal
 	
-	static hasMany = [segmentos: Segmento]
+	
+	static hasMany = [segmentos: Segmento, origenVuelo: Lugar, destinoVuelo: Lugar]
+	static mappedBy = [origen: "sigla", destino: "sigla"]
 
   static constraints = {
   }

@@ -8,6 +8,9 @@ class Escala {
 	String fechaLlegada //2015-05-13T21:35+03:00
 	String duracion
 	
+	static hasMany = [origenEscala: Lugar, destinoEscala: Lugar]
+	static mappedBy = [origen: "sigla", destino: "sigla"]
+	
   static constraints = {
   }
 }

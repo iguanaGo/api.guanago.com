@@ -263,7 +263,7 @@ public class QPXWebServiceClient {
 									["origin": from,"destination": destination,"date": fecha]
 									//, ["origin": destination,"destination": from,"date": "2015-05-23"]
 							]
-						,"solutions": 20
+						,"solutions": 1
 						]
 					]
 			response.success = {resp, json ->

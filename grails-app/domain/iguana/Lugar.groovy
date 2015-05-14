@@ -1,18 +1,11 @@
 package iguana
 
-class Coordenadas {
-	double latitud
-	double longitud
-}
-
 class Lugar {
-	String nombre
-	String siglas
-	Coordenadas coordenadas
+	String sigla
+	String nombre	
+	Coordenada coordenada
 
-	static embedded = ['coordenadas']
-
-  static constraints = {
-  	nombre blank: false , nullable: false
+	static constraints = {
+		nombre blank: false , nullable: false
   }
 }
