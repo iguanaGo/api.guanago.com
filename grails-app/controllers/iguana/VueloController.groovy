@@ -145,7 +145,7 @@ class VueloController {
 				def trips = flights.flights.trips.tripOption.sort{a,b ->  Float.parseFloat(a.saleTotal.substring(3,a.saleTotal.length())) <=>  Float.parseFloat(b.saleTotal.substring(3,b.saleTotal.length())) }
 				cargarVuelosQPX(trips, origen, destino)
 
-				//render "vuelos <br /> ${vuelos}"
+				redirect action:"index", method:"GET"
 			}
 			else
 			{

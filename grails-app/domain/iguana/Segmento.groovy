@@ -8,6 +8,10 @@ class Segmento {
 	
 	static hasMany = [escalas: Escala]
 	
+	String toString(){
+		"${numeroDeVuelo}"
+	}
+	
   static constraints = {
   }
 }
