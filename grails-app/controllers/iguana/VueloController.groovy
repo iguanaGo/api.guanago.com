@@ -51,7 +51,6 @@ class VueloController {
 	
 
 	/***
-	 * TODO testear
 	 * @param trips
 	 * @param origen
 	 * @param destino
@@ -59,38 +58,26 @@ class VueloController {
 	 */
 	def cargarVuelosQPX(def trips, String origen, String destino)
 	{
-		//Imprimir salida
-		def vuelosRender = "origin|destination|DAY|departureTime|arrivalTime|duration|saleTotal|flight.carrier|flight.number | aircraft <br />"
-		trips.each{
-			//origin|destination|saleTotal|DAY|departureTime|arrivalTime|duration|flight.carrier|flight.number | aircraft
-			vuelosRender += it.slice[0].segment[0].leg[0].origin + "|" +   it.slice[0].segment[0].leg[0].destination + "|" +
-					it.slice[0].segment[0].leg[0].departureTime + "|" +   it.slice[0].segment[0].leg[0].arrivalTime + "|" +  it.slice[0].segment[0].duration/60 + " Hs |"+
-					it.saleTotal + "|" + it.slice[0].segment[0].flight.carrier + "|" + it.slice[0].segment[0].flight.number + "|" + it.slice[0].segment[0].leg[0].aircraft + "|"+
-					it.slice[0].segment[0].leg[0].changePlane.toString() + "\n"
-			//it.slice[0].segment[0].bookingCode + "|" it.slice[0].segment[0].bookingCodeCount
-		}
-		render "vuelos <br /> ${trips}"
+		//		//Imprimir salida
+		//		def vuelosRender = "origin|destination|DAY|departureTime|arrivalTime|duration|saleTotal|flight.carrier|flight.number | aircraft <br />"
+		//		trips.each{
+		//			//origin|destination|saleTotal|DAY|departureTime|arrivalTime|duration|flight.carrier|flight.number | aircraft
+		//			vuelosRender += it.slice[0].segment[0].leg[0].origin + "|" +   it.slice[0].segment[0].leg[0].destination + "|" +
+		//					it.slice[0].segment[0].leg[0].departureTime + "|" +   it.slice[0].segment[0].leg[0].arrivalTime + "|" +  it.slice[0].segment[0].duration/60 + " Hs |"+
+		//					it.saleTotal + "|" + it.slice[0].segment[0].flight.carrier + "|" + it.slice[0].segment[0].flight.number + "|" + it.slice[0].segment[0].leg[0].aircraft + "|"+
+		//					it.slice[0].segment[0].leg[0].changePlane.toString() + "\n"
+		//			//it.slice[0].segment[0].bookingCode + "|" it.slice[0].segment[0].bookingCodeCount
+		//		}
+		//		render "vuelos <br /> ${trips}"
 
-		//TODO instanciar un lugar correcto
-		Lugar lugarOrigen = new Lugar(coordenada:new Coordenada(latitud : 2.14, longitud: 60.00))
-		Lugar lugarDestino = new Lugar(coordenada:new Coordenada(latitud : 3.73, longitud: 90.00))
-		
-		lugarOrigen.nombre = origen
-		lugarOrigen.sigla = origen
-		lugarDestino.nombre = destino
-		lugarDestino.sigla = destino
-		
-		lugarOrigen.save(flush:true)
-		lugarDestino.save(flush:true)
-
+		Lugar lugarControl = new Lugar()
 		trips.each{
 			//origin|destination|saleTotal|DAY|departureTime|arrivalTime|duration|flight.carrier|flight.number | aircraft
 			Vuelo vuelo = new Vuelo()
-
 	
 			vuelo.precioTotal = it.saleTotal
-			vuelo.origen = lugarOrigen
-			vuelo.destino = lugarDestino
+			vuelo.origen =  Lugar.find { sigla  == origen }
+			vuelo.destino = Lugar.find{ sigla == destino }
 			
 			def slices = it.slice			
 			slices.each{ sliceIt ->
@@ -109,23 +96,9 @@ class VueloController {
 						escala.fechaLlegada =  escalaIt.arrivalTime
 						escala.fechaSalida =  escalaIt.departureTime
 						escala.avion = escalaIt.aircraft
-						escala.duracion = escalaIt.duration/60		
-						
-						//TODO instanciar un lugar correcto						
-						Lugar lugarEscalaOrigen = new Lugar(coordenada:new Coordenada(latitud : 2.73, longitud: 9.00))
-						lugarEscalaOrigen.nombre = escalaIt.origin
-						lugarEscalaOrigen.sigla = escalaIt.origin
-												
-						Lugar lugarEscalaDestino = new Lugar(coordenada:new Coordenada(latitud : 3.14, longitud: 30.00))
-						lugarEscalaDestino.nombre = escalaIt.destination
-						lugarEscalaDestino.sigla = escalaIt.destination
-						 
-						
-						lugarEscalaOrigen.save()
-						lugarEscalaDestino.save()
-								
-						escala.origen = lugarEscalaOrigen
-						escala.destino =  lugarEscalaDestino
+						escala.duracion = escalaIt.duration/60				
+						escala.origen = Lugar.find { sigla  == escalaIt.origin }
+						escala.destino =  Lugar.find { sigla  == escalaIt.destination}
 						
 						segmento.addToEscalas(escala)
 					}
@@ -136,8 +109,6 @@ class VueloController {
 			
 			vuelo.save(flush:true)
 		}
-
-		//return rdo
 	}
 
 	/***
