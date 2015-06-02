@@ -1,5 +1,7 @@
 package iguana
 
+import groovy.json.JsonBuilder
+
 class Escala {
 	String avion
 	Lugar origen
@@ -13,6 +15,11 @@ class Escala {
 	
 	String toString(){
 		"${origen.nombre} DESTINO ${destino.nombre} "
+	}
+	
+	String toJson()
+	{
+		new JsonBuilder( this ).toPrettyString()
 	}
 
 	static constraints = {

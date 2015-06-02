@@ -1,5 +1,7 @@
 package iguana
 
+import groovy.json.JsonBuilder
+
 class Segmento {
 
 	String aerolinea
@@ -10,6 +12,11 @@ class Segmento {
 	
 	String toString(){
 		"${numeroDeVuelo}"
+	}
+	
+	String toJson()
+	{
+		new JsonBuilder( this ).toPrettyString()
 	}
 	
   static constraints = {

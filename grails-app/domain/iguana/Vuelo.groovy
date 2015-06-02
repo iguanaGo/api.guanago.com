@@ -1,5 +1,6 @@
 package iguana
 
+import groovy.json.JsonBuilder
 class Vuelo {
 	Lugar origen
 	Lugar destino
@@ -10,5 +11,10 @@ class Vuelo {
 	static mappedBy = [origen: "sigla", destino: "sigla"]
 
   static constraints = {
+  }
+  
+  String toJson()
+  {
+	  new JsonBuilder( this ).toPrettyString()
   }
 }
