@@ -1,6 +1,8 @@
 package iguana
 
+
 import iguana.src.groovy.*
+import grails.rest.RestfulController;
 import grails.transaction.Transactional
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
@@ -36,11 +38,16 @@ class BusquedaVueloCommand {
  *
  */
 @Transactional(readOnly = true)
-class VueloController {
+class VueloController extends RestfulController{
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
 
+	static responseFormats = ['json', 'xml']
+	VueloController() {
+		super(Vuelo)
+	}
+	
 	def index(Integer max) {
 		
 		[command: new BusquedaVueloCommand()]

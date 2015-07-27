@@ -1,15 +1,22 @@
 package iguana
 
 
-
 import static org.springframework.http.HttpStatus.*
+import grails.rest.RestfulController;
 import grails.transaction.Transactional
 
+
+
 @Transactional(readOnly = true)
-class SegmentoController {
+class SegmentoController extends RestfulController{
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+	static responseFormats = ['json', 'xml']
+	SegmentoController() {
+		super(Segmento)
+	}
+	
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Segmento.list(params), model:[segmentoInstanceCount: Segmento.count()]
