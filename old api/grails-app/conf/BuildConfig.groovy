@@ -41,7 +41,6 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
-        mavenRepo 'http://repo.spring.io/milestone'
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
@@ -52,6 +51,12 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+		
+		  runtime('org.codehaus.groovy.modules.http-builder:http-builder:0.5.1') {
+		        excludes 'xalan'
+		        excludes 'xml-apis'
+		        excludes 'groovy'
+		    }
     }
 
     plugins {
@@ -62,10 +67,9 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         compile ":asset-pipeline:2.1.5"
-        compile ':spring-security-core:2.0-RC4'
-        compile ':spring-security-rest:1.5.1', {
-            excludes: 'spring-security-core'
-        }
+        //compile ":inflector:0.2"
+        //compile ":cache-headers:1.1.7"
+        //compile ":restful-api:1.0.0"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.8.1" // or ":hibernate:3.6.10.18"
