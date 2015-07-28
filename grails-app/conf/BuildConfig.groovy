@@ -62,6 +62,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         compile ":asset-pipeline:2.1.5"
+        compile ":rest-client-builder:2.1.1"
         compile ':spring-security-core:2.0-RC4'
         compile ':spring-security-rest:1.5.1', {
             excludes: 'spring-security-core'

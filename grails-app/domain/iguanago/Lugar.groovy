@@ -4,6 +4,10 @@ class Coordenadas {
 	double latitude
 	double longitude
 
+	String toString(){
+  		return "{ latitude: \'${latitude}\' , longitude: \'${longitude}\'}"
+	}
+
 	static constraints = {
 		latitude blank: false
 		longitude blank: false

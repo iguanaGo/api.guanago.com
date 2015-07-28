@@ -9,5 +9,10 @@ class Vuelo {
 	Date arrivalDate
 
     static constraints = {
+    	price nullable: false
+    	from nullable: false
+    	destination nullable: false
+    	departureDate nullable: false
+    	arrivalDate nullable: false
     }
 }

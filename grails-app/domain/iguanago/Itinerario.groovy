@@ -1,16 +1,35 @@
 package iguanago
 
 class Itinerario {
-	Presupuesto budget
-	boolean isPublic
-	SortedSet vuelos
 
+	boolean isPublic
+	Stack vuelos
+
+    static hasOne = [budget: Presupuesto]
 	static hasMany = [vuelos: Vuelo]
     static constraints = {
+        budget nullable: false
     }
 
-    void addVuelo(Etapa vuelo) {
+    void addVuelo(Vuelo vuelo) {
+        if(!vuelos.empty()){
+            lastFlight = vuelos.peek()
+
+            if(lastFlight.arrivalDate.after(vuelo.departureDate)){
+                //trhow ex
+                return
+            }
+
+            if(!budget.hasEnough(vuelo)){
+                //trhow ex
+                return
+            }
+        }
+        vuelos.push(vuelo)
     	// TODO checkiar presupuesto suficiente y fechas validas
-    	vuelos add vuelo
+    }
+
+    Itinerario(budget){
+        this.budget = budget
     }
 }

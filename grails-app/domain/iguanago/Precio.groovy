@@ -10,7 +10,8 @@ class Precio {
 
 	float totalValue() {
 		float total = 0
-		return importes.each { total += it.value }
+		importes.each { total += it.value }
+		return total
 	}
 
 	Precio(importes){
