@@ -20,13 +20,12 @@ class Itinerario {
                 return
             }
 
-            if(!budget.hasEnough(vuelo)){
+            if(!budget.hasEnoughFor(vuelo)){
                 //trhow ex
                 return
             }
         }
         vuelos.push(vuelo)
-    	// TODO checkiar presupuesto suficiente y fechas validas
     }
 
     Itinerario(budget){

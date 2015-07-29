@@ -116,24 +116,14 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
-// Added by the Spring Security Core plugin:
-//grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-//	'/':                              ['permitAll'],
-//	'/index':                         ['permitAll'],
-//	'/index.gsp':                     ['permitAll'],
-//	'/assets/**':                     ['permitAll'],
-//	'/**/js/**':                      ['permitAll'],
-//	'/**/css/**':                     ['permitAll'],
-//	'/**/images/**':                  ['permitAll'],
-//	'/**/favicon.ico':                ['permitAll']
-//]
+grails.plugin.springsecurity.rejectIfNoRule = false
+grails.plugin.springsecurity.fii.rejectPublicInvocations = false
 
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'iguanago.auth.Usuario'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'iguanago.auth.UsuarioRol'
 grails.plugin.springsecurity.authority.className = 'iguanago.auth.Rol'
 grails.plugin.springsecurity.filterChain.chainMap = [
     '/api/**': 'JOINED_FILTERS,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter'  // Stateless chain
-    //'/**': 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter'                                                                          // Traditional chain
 ]
 grails.plugin.springsecurity.rest.login.active = true
 grails.plugin.springsecurity.rest.login.endpointUrl = '/api/login'
@@ -142,7 +132,6 @@ grails.plugin.springsecurity.rest.login.useJsonCredentials = true
 grails.plugin.springsecurity.rest.login.usernamePropertyName = 'username'
 grails.plugin.springsecurity.rest.login.passwordPropertyName = 'password'
 grails.plugin.springsecurity.rest.logout.endpointUrl = '/api/logout'
-grails.plugin.springsecurity.rest.token.validation.headerName = 'X-Auth-Token'
 grails.plugin.springsecurity.rest.token.storage.useJwt = true
 grails.plugin.springsecurity.rest.token.storage.jwt.useSignedJwt = true
 grails.plugin.springsecurity.rest.token.storage.jwt.secret  = 'seminarioDeIngenieriaInformatica2015iguanago'

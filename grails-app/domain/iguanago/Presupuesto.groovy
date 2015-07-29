@@ -28,7 +28,7 @@ class Presupuesto {
 	}
 
 
-    boolean hasEnough( flight ){
+    boolean hasEnoughFor( flight ){
     	return amount >= usedAmount() + convertToCurrency(flight.price)
     }
 }
