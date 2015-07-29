@@ -2,19 +2,17 @@
  
 class Precio {
 	String currency
-	
+	float totalValue
+
 	static hasMany = [importes: Importe]
     static constraints = {
     	currency blank: false
     }
 
-	float totalValue() {
-		float total = 0
-		importes.each { total += it.value }
-		return total
-	}
-
-	Precio(importes){
+	Precio(importes, currency){
 		this.importes = importes
+		this.currency = currency
+		this.totalValue = 0
+		importes.each { this.totalValue += it.value }
 	}
 } 

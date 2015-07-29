@@ -16,7 +16,7 @@ class Presupuesto {
 		if(currency != price.currency){
 			conversionRate = CurrencyConverterService.getConversionRate(price.currency,currency)
 		}
-		return price.totalValue() * conversionRate
+		return price.totalValue * conversionRate
     }
 
 	float usedAmount() {

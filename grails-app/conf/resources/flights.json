@@ -1,0 +1,36 @@
+{
+	"flights": [
+		{ 
+			"from": "Buenos Aires" , 
+			"destination": "Paris", 
+			"price" :  {
+				"currency": "ARS",
+				"imports" : [ { "details" : "total", "value" : 8000 } ]
+			}
+		},
+		{ 
+			"from": "Buenos Aires" , 
+			"destination": "Berlin", 
+			"price" :  {
+				"currency": "ARS",
+				"imports" : [ { "details" : "total", "value" : 9000 } ]
+			}
+		},
+		{ 
+			"from": "Buenos Aires" , 
+			"destination": "London", 
+			"price" :  {
+				"currency": "ARS",
+				"imports" : [ { "details" : "total", "value" : 8500 } ]
+			}
+		},
+		{ 
+			"from": "Buenos Aires" , 
+			"destination": "Montevideo", 
+			"price" :  {
+				"currency": "ARS",
+				"imports" : [ { "details" : "total", "value" : 1000 } ]
+			}
+		}
+	]
+}

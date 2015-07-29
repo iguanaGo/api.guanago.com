@@ -8,6 +8,6 @@ class ProposalsController {
 	}
 
     def index() {
-    	render "asd"
+    	
     }
 }
